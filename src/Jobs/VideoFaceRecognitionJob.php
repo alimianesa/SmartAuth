@@ -82,9 +82,9 @@ class VideoFaceRecognitionJob implements ShouldQueue
     public function validateCardImage(AliveFile $video ,AliveFile $registrationImage)
     {
         if (!is_null($video) && !is_null($registrationImage)) {
-            return shell_exec('cd python && venv/bin/python3 project-video-face-recognition.py '.
-                "\"../storage/app/{$video->uri}\"" .' '.
-                "\"../storage/app/{$registrationImage->uri}\"");
+            return shell_exec('cd vendor/alimianesa/smartauth/src/python && python3 project-video-face-recognition.py '.
+                "\"../../../../../storage/app/{$video->uri}\"" .' '.
+                "\"../../../../../storage/app/{$registrationImage->uri}\"");
         }
         return false;
     }
@@ -139,8 +139,8 @@ class VideoFaceRecognitionJob implements ShouldQueue
             shell_exec("ffmpeg -i storage/app/{$video->uri} -vn storage/app/{$wavUri}");
 
             // Convert Speech To Text
-            $voiceToText = shell_exec('cd python && venv/bin/python3 project-video-voice-recognition.py '.
-                "\"../storage/app/{$wavUri}\"");
+            $voiceToText = shell_exec('cd vendor/alimianesa/smartauth/src/python && python3 project-video-voice-recognition.py '.
+                "\"../../../../../storage/app/{$wavUri}\"");
 
             // Get assigned Text
             $text = $video->speechTexts()->first()->speech_text;

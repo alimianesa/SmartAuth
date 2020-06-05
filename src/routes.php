@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::prefix('api')->group(function () {
+Route::namespace('Alimianesa\SmartAuth\Http\Controllers')->prefix('api')->group(function () {
     Route::prefix('registration/office')->group(function () {
         Route::post('card' , 'ValidateUserController@cardPhoneValidation');
     });

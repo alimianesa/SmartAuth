@@ -2,7 +2,7 @@
 
 namespace Alimianesa\SmartAuth;
 
-use App\Resources\LaravelSmartCoding\SmartCoding;
+use Alimianesa\SmartAuth\Resources\LaravelSmartCoding\SmartCoding;
 use Illuminate\Database\Eloquent\Model;
 
 class SpeechText extends Model

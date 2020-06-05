@@ -2,7 +2,8 @@
 
 namespace Alimianesa\SmartAuth;
 
-use App\Resources\LaravelSmartCoding\SmartCoding;
+use Alimianesa\SmartAuth\Resources\LaravelSmartCoding\SmartCoding;
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class AliveFile extends Model

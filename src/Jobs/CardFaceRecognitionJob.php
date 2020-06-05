@@ -84,9 +84,9 @@ class CardFaceRecognitionJob implements ShouldQueue
     public function validateCardImage($cardImage , $registrationImage)
     {
         if (!is_null($cardImage) && !is_null($registrationImage)) {
-            return shell_exec('cd ../python && venv/bin/python3 project-face-recognition.py '.
-                "\"../storage/app/{$cardImage->uri}\"" .' '.
-                "\"../storage/app/{$registrationImage->uri}\"") == "True\n" ? true : false;
+            return shell_exec('cd ../vendor/alimianesa/smartauth/src/python && python3 project-face-recognition.py '.
+                "\"../../../../../storage/app/{$cardImage->uri}\"" .' '.
+                "\"../../../../../storage/app/{$registrationImage->uri}\"") == "True\n" ? true : false;
         }
         return false;
     }
